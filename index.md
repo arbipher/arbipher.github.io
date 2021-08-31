@@ -6,19 +6,16 @@ category:
 ---
 
 {: .text-align-center}
-![funny](/assets/img/me_19-09-20_resize.jpg)
+![funny](/assets/img/me_2021_summer_resize.jpg)
 <!-- {:height="70px" width="70px"} -->
 
 ## # Shiwei Weng 翁士伟
 
-I am a third-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year3_PhD_summer.pdf) (updated May 2021).
+I am a fourth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
 
 My research interests span several aspects of programming languages. I believe programming languages can provide solutions to problems in other areas of computer science. I am active in our lab's weekly [seminar](https://pl.cs.jhu.edu/seminars/fall-2020/) and happy to [chat](http://blog.tail.moe/contact) about them.
 
-This summer (2021), I work as a Research Intern at Microsoft Research Lab, Redmond (_virtually_), on [Checked C](https://www.microsoft.com/en-us/research/project/checked-c/) project.
-
 <!-- ~~**I am looking forward to summer internship 2020 (functional languages esp. OCaml preferred but all is fine). <a href="mailto:wengshiwei@jhu.edu">Email me</a> wengshiwei@jhu.edu**~~ -->
-<!-- I got an internship offer at [Nomadic Labs](https://nomadic-labs.com/) on Linear Types and OCaml program analysis summer 2019. However, due to the COVID-19 and regulations for international students in United States, I cannot make it physically nor virtually. -->
 
 <!-- ## Ongoing Research -->
 ## # Research
@@ -27,8 +24,8 @@ This summer (2021), I work as a Research Intern at Microsoft Research Lab, Redmo
 
 - Symbolic _backwards_ execution of functional languages
 - Start from any position in programs
-- (done) Establish the soundness and develop a test generation algorithm. See publication [ICFP 2020].
-- (in progress) Optimization (function summarization), new features (mutable states), new approaches (model checking)  [[repo](https://github.com/JHU-PL-Lab/ddse)]
+- (Done) Establish the soundness and develop a test generation algorithm. See publication [ICFP 2020].
+- (In progress) Optimization (function summarization), new features (mutable states), new approaches (model checking)  [[repo](https://github.com/JHU-PL-Lab/ddse)]
 
 <!-- ### 2. Program Analysis on the Usage of JavaScript GUI Frameworks
 
@@ -38,19 +35,25 @@ This summer (2021), I work as a Research Intern at Microsoft Research Lab, Redmo
 
 <!-- ## Finished Projects -->
 
+## # Work Experience
+
+### Microsoft Research Lab, Redmond (_virtually_), Summer 2021, 
+
+I worked as a Research Intern on [Checked C](https://www.microsoft.com/en-us/research/project/checked-c/) project. I designed and implemented a dataflow analysis which gathers pre/post-conditions at program points and a SMT-­based proof framework to reduce false-positive compiler warnings. It's a wonderful summer. Thanks to my mentor Sulekha Kulkarni, the boss David Tarditi and all the team members!
+
+### Something before
+
+I got an internship offer from [Nomadic Labs](https://nomadic-labs.com/) on Linear Types and OCaml program analysis for summer 2019. However, due to the COVID-19 and regulations for international students in United States, I cannot make it physically nor virtually. What a pity.
+
+Before graduate school, I took several jobs in start-ups and freelance work, mostly in full-stack web programming.
+
 ## # Professional Experience
 
 - Head Teaching Assistant, [601.426/626 Principles of Programming Languages](//pl.cs.jhu.edu/pl/index.shtml), Spring 18 (evaluation [1](/assets/pdf/EN.601.426.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf) [2](/assets/pdf/EN.601.626.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf)), Spring 19 ([evaluation](/assets/pdf/EN.601.426.01.SP19PrinciplesofProgrammingLanguages_ScottSmith.pdf))
 - Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20
-- volunteer for SPLASH 2017, SPLASH 2018, ICFP 2020, OCaml 2020
-- attend [PLISS 2017](https://pliss2017.github.io/index.html), [PLMW@SPLASH 2017](https://2017.splashcon.org/track/splash-2017-PLMW#About)
-
-
-## # Work Experience
-
-I am the system administrator of [our lab](http://pl.cs.jhu.edu/).
-
-Before graduate school, I took several jobs in start-ups and freelance work, mostly in full-stack web programming.
+- System Administrator of [our lab](http://pl.cs.jhu.edu/)
+- Volunteer for SPLASH 2017, SPLASH 2018, ICFP 2020, OCaml 2020
+- Attend [PLISS 2017](https://pliss2017.github.io/index.html), [PLMW@SPLASH 2017](https://2017.splashcon.org/track/splash-2017-PLMW#About)
 
 ## # Publications
 
@@ -62,4 +65,4 @@ I [play](https://steamcommunity.com/id/arbipher/games/?tab=all&sort=playtime) vi
 
 I am married to [Xiaoxi Chen](https://www.linkedin.com/in/%E5%B0%8F%E6%BA%AA-%E9%99%88-6655b489/) 陈小溪. I teach her programming and she teaches me human anatomy.
 
-We have a <a href="/assets/img/cat_2019.jpg" target="_blank">cat</a>.
+We have a <a href="/assets/img/cat_2019.jpg" target="_blank">cat</a> but there is usually more at home (<a href="/assets/img/2_cats_2020.mp4" target="_blank">2 cats</a>, <a href="/assets/img/3_cats_2021.jpg" target="_blank">3 cats</a>).
