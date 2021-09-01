@@ -39,7 +39,7 @@ My research interests span several aspects of programming languages. I believe p
 
 ### Microsoft Research Lab, Redmond (_virtually_), Summer 2021, 
 
-I worked as a Research Intern on [Checked C](https://www.microsoft.com/en-us/research/project/checked-c/) project. I designed and implemented a dataflow analysis which gathers pre/post-conditions at program points and a SMT-­based proof framework to reduce false-positive compiler warnings. It's a wonderful summer. Thanks to my mentor Sulekha Kulkarni, the boss David Tarditi and all the team members!
+I worked as a Research Intern on [Checked C](https://www.microsoft.com/en-us/research/project/checked-c/) project. I designed and implemented a dataflow analysis which gathers pre/post-conditions at program points and an SMT-­based proof framework to reduce false-positive compiler warnings. It's a wonderful summer. Thanks to my mentor Sulekha Kulkarni, the boss David Tarditi and all the team members!
 
 ### Something before
 
