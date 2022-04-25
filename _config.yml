@@ -9,7 +9,7 @@ kramdown:
   syntax_highlighter_opts:
     default_lang: "ocaml"
 
-url: "https://blog.tail.moe" # the base hostname & protocol for your site
+url: "https://www.prover.me" # the base hostname & protocol for your site
 
 plugins:
   - jekyll-analytics
