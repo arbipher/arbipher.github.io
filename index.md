@@ -49,15 +49,19 @@ Before graduate school, I took several jobs in start-ups and freelance work, mos
 
 ## # Professional Experience
 
-- Head Teaching Assistant, [601.426/626 Principles of Programming Languages](//pl.cs.jhu.edu/pl/index.shtml), Spring 18 (evaluation [1](/assets/pdf/EN.601.426.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf) [2](/assets/pdf/EN.601.626.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf)), Spring 19 ([evaluation](/assets/pdf/EN.601.426.01.SP19PrinciplesofProgrammingLanguages_ScottSmith.pdf))
+- Head Teaching Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 18 (evaluation [1](/assets/pdf/EN.601.426.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf) [2](/assets/pdf/EN.601.626.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf)), Spring 19 ([evaluation](/assets/pdf/EN.601.426.01.SP19PrinciplesofProgrammingLanguages_ScottSmith.pdf))
 - Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20
-- System Administrator of [our lab](http://pl.cs.jhu.edu/)
+- System Administrator of [our lab](https://pl.cs.jhu.edu/)
 - Volunteer for SPLASH 2017, SPLASH 2018, ICFP 2020, OCaml 2020
-- Attend [PLISS 2017](https://pliss2017.github.io/index.html), [PLMW@SPLASH 2017](https://2017.splashcon.org/track/splash-2017-PLMW#About)
+- Attend [OPLSS 2022](https://www.cs.uoregon.edu/research/summerschool/summer22/), [PLISS 2017](https://pliss2017.github.io/index.html), [PLMW@SPLASH 2017](https://2017.splashcon.org/track/splash-2017-PLMW#About)
 
 ## # Publications
 
 Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Driven Symbolic Evaluation, ICFP 2020 [[page](https://icfp20.sigplan.org/details/icfp-2020-papers/22/Higher-Order-Demand-Driven-Symbolic-Evaluation)] [[doi](https://dl.acm.org/doi/10.1145/3408984)] [[pdf](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/papers/icfp20-ddse-full.pdf)] [[repo](https://github.com/JHU-PL-Lab/odefa)] [[talk](https://talks.cs.umd.edu/talks/2657) ([slide](assets/pdf/2020-ddse-umd.pdf))]
+
+## # Open Source
+
+I [maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss). Other randoms.
 
 ## # Misc
 

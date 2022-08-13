@@ -7,12 +7,15 @@ categories:
 - programming-languages
 - shell
 - writing
-- software-complexity
 - computer-science
+- open-source
+- conference
 
 redirect_from:
 - /assets/*
 ---
+{% assign a_month_ago = 'now' | date: "%s" | minus : 2592000 %}
+
 {% for category in page.categories %}
 {% if site.categories[category] %}
 <section>
@@ -22,7 +25,11 @@ redirect_from:
 		{% if post.categories contains "english" or post.lang == "en" %}
 		<li>
 			{{ post.date | date: "%Y-%m-%d" }}
+			{% assign post_time = post.date | date: "%s" | minus : 0 %}
 			<a href='{{ post.url }}'>{{ post.title }}</a>
+			{% if post_time > a_month_ago %}
+			<strong> (new blog) </strong>
+			{% endif %}
 		</li>
 		{% endif %}
 		{% endfor %}
