@@ -17,7 +17,7 @@ Baltimore, MD 21218
 
 ### Email
 
-<a href="mailto:wengshiwei@jhu.edu">wengshiwei@jhu.edu</a>
+<a href="mailto:weng@cs.jhu.edu">weng@cs.jhu.edu</a>
 
 ### Phone
 
