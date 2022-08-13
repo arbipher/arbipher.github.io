@@ -4,6 +4,9 @@ _site
 .jade
 _drafts
 
+# editor
+.vscode
+
 # ocaml related
 .merlin
 _build
