@@ -10,7 +10,8 @@ category:
 {: .text-align-center}
 ![Ouroboros](https://upload.wikimedia.org/wikipedia/commons/7/71/Serpiente_alquimica.jpg)
 
-Disclaim:
+# Disclaim:
+
 - This blog is a working draft.
 - Not going to cover the duality of recursion and corecursion this time.
 - Not going to cover functional graphs this time.
