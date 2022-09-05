@@ -1,1 +1,3 @@
-(dirs :standard _posts)
+; (dirs :standard _posts)
+
+(dirs :standard _drafts)
