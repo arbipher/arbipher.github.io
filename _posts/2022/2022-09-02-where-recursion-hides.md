@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Where loops hide
+title: Where recursion hides
 comments: true
 category:
 - english
@@ -15,12 +15,6 @@ Disclaim:
 - Not going to cover the duality of recursion and corecursion this time.
 - Not going to cover functional graphs this time.
 - Not going to discuss recursive types, though I think comparing between recursive types, recursive functions, and recursive expressions is interesting.
-<!-- 
-# Off-topic Preface
-
-Recently, I refactored the interpreter and graph rendering in the lab project. This arouse me some previou interest on functional graph. One problem of representing graph in (immutable) functional language is how to 
-
-The thoughts and discussions get down to recursive -->
 
 # Material: Sum on the ground
 
