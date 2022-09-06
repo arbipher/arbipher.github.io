@@ -13,7 +13,9 @@ category:
 
 I am a fourth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
 
-My research interests span several aspects of programming languages. I believe programming languages can provide solutions to problems in other areas of computer science. I am active in our lab's weekly [seminar](https://pl.cs.jhu.edu/seminars/fall-2020/) and happy to [chat](http://blog.tail.moe/contact) about them.
+My research interests span several aspects of programming languages. I believe programming languages can provide solutions to problems in other areas of computer science. I am active in our lab's weekly [seminar](https://pl.cs.jhu.edu/seminars/fall-2020/) and happy to [chat]({{ site.baseurl }}{% link contact.md %}) about them.
+
+
 
 <!-- ~~**I am looking forward to summer internship 2020 (functional languages esp. OCaml preferred but all is fine). <a href="mailto:wengshiwei@jhu.edu">Email me</a> wengshiwei@jhu.edu**~~ -->
 

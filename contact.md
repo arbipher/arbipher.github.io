@@ -7,9 +7,9 @@ lang: en
 
 ### Address
 
-WFH. I am on Zoom now.
+~~WFH. I am on Zoom now.~~
+Zone 255, Ph.D. Lab, Malone Hall<br/>
 
-Ph.D. Lab, Malone Hall<br/>
 Department of Computer Science<br/>
 Johns Hopkins University<br/>
 3400 N. Charles Street<br/>

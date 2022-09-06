@@ -169,3 +169,7 @@ OCaml's `lazy` is weaker than Haskell's native laziness. We cannot define direct
 I started to think about these topics in mid-August. Last week, a thread [[Caml-list] coinductive data types](https://sympa.inria.fr/sympa/arc/caml-list/2022-08/msg00007.html) on OCaml mail-list asked about similar question. The stream example is from Xavier Leroy's [reply](https://sympa.inria.fr/sympa/arc/caml-list/2022-08/msg00010.html).
 
 (t.b.c)
+
+more:
+https://en.wikipedia.org/wiki/Let_expression
+https://www.cs.cornell.edu/Projects/CoCaml/
