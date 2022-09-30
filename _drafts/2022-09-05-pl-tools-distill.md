@@ -47,6 +47,6 @@ In model checking, the **logic** is the abstract model, which can be e.g. some t
 3. Saturation engine. No worry. I just make a fancy names to describe our code (or paper) system to apply (2) to (1). -->
 {% endcomment %}
 
-<!-- engine -->
+
 2. Abstract stuff that is extracted from the concrete stuff.
 

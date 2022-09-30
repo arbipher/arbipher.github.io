@@ -11,7 +11,7 @@ category:
 
 ## # Shiwei Weng 翁士伟
 
-I am a fourth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
+I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
 
 My research interests span several aspects of programming languages. I believe programming languages can provide solutions to problems in other areas of computer science. I am active in our lab's weekly [seminar](https://pl.cs.jhu.edu/seminars/fall-2020/) and happy to [chat]({{ site.baseurl }}{% link contact.md %}) about them.
 
@@ -63,7 +63,7 @@ Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Dri
 
 ## # Open Source
 
-I [maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss). Other randoms.
+I [maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss).
 
 ## # Misc
 
