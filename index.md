@@ -11,10 +11,9 @@ category:
 
 ## # Shiwei Weng 翁士伟
 
-I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
+I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master's degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
 
 My research interests span several aspects of programming languages. I believe programming languages can provide solutions to problems in other areas of computer science. I am active in our lab's weekly [seminar](https://pl.cs.jhu.edu/seminars/fall-2020/) and happy to [chat]({{ site.baseurl }}{% link contact.md %}) about them.
-
 
 
 <!-- ~~**I am looking forward to summer internship 2020 (functional languages esp. OCaml preferred but all is fine). <a href="mailto:wengshiwei@jhu.edu">Email me</a> wengshiwei@jhu.edu**~~ -->
@@ -22,12 +21,16 @@ My research interests span several aspects of programming languages. I believe p
 <!-- ## Ongoing Research -->
 ## # Research
 
-### Demand-Driven Symbolic Execution  [[lab page](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/)]
+### Higher-Order Demand-Driven Symbolic Execution [[lab page](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/)]
 
 - Symbolic _backwards_ execution of functional languages
 - Start from any position in programs
-- (Done) Establish the soundness and develop a test generation algorithm. See publication [ICFP 2020].
-- (In progress) Optimization (function summarization), new features (mutable states), new approaches (model checking)  [[repo](https://github.com/JHU-PL-Lab/ddse)]
+- Establish the soundness and develop a test generation algorithm. See publication [ICFP 2020].
+- (In progress) Bounded Model Checking [[repo](https://github.com/JHU-PL-Lab/ddse)]
+- Give a talk at [NJPLS 2022](https://njpls.org/oct22.html) ([[pic](https://twitter.com/LeoLambro/status/1583522021811490817)]) for progress on the BMC.
+
+
+<!-- Optimization (function summarization), new features (mutable states), new approaches (model checking)  -->
 
 <!-- ### 2. Program Analysis on the Usage of JavaScript GUI Frameworks
 
@@ -37,7 +40,7 @@ My research interests span several aspects of programming languages. I believe p
 
 <!-- ## Finished Projects -->
 
-## # Work Experience
+## # Work
 
 ### Microsoft Research Lab, Redmond (_virtually_), Summer 2021, 
 
@@ -45,17 +48,21 @@ I worked as a Research Intern on [Checked C](https://www.microsoft.com/en-us/res
 
 ### Something before
 
-I got an internship offer from [Nomadic Labs](https://nomadic-labs.com/) on Linear Types and OCaml program analysis for summer 2019. However, due to the COVID-19 and regulations for international students in United States, I cannot make it physically nor virtually. What a pity.
+<!-- I got an internship offer from [Nomadic Labs](https://nomadic-labs.com/) on Linear Types and OCaml program analysis for summer 2019. However, due to the COVID-19 and regulations for international students in United States, I cannot make it physically nor virtually. What a pity. -->
 
 Before graduate school, I took several jobs in start-ups and freelance work, mostly in full-stack web programming.
 
-## # Professional Experience
+## # Professional
 
-- Head Teaching Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 18 (evaluation [1](/assets/pdf/EN.601.426.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf) [2](/assets/pdf/EN.601.626.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf)), Spring 19 ([evaluation](/assets/pdf/EN.601.426.01.SP19PrinciplesofProgrammingLanguages_ScottSmith.pdf))
-- Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20
-- System Administrator of [our lab](https://pl.cs.jhu.edu/)
+- OOPSLA'23 Extended Review and Artifact Evaluation Committee
 - Volunteer for SPLASH 2017, SPLASH 2018, ICFP 2020, OCaml 2020
 - Attend [OPLSS 2022](https://www.cs.uoregon.edu/research/summerschool/summer22/), [PLISS 2017](https://pliss2017.github.io/index.html), [PLMW@SPLASH 2017](https://2017.splashcon.org/track/splash-2017-PLMW#About)
+
+## # Teaching
+
+- Head Teaching Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 18 (evaluation [1](/assets/pdf/EN.601.426.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf) [2](/assets/pdf/EN.601.626.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf)) / 19 ([evaluation](/assets/pdf/EN.601.426.01.SP19PrinciplesofProgrammingLanguages_ScottSmith.pdf))
+- Course Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 20 / 21 /22
+- Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20 / 21 / 22
 
 ## # Publications
 
@@ -63,7 +70,10 @@ Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Dri
 
 ## # Open Source
 
-I [maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss).
+[Maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss).
+<!-- - Make random RPs to OCaml and LLVM. -->
+
+<!-- - System Administrator of [our lab](https://pl.cs.jhu.edu/) -->
 
 ## # Misc
 
