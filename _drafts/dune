@@ -1,0 +1,7 @@
+(copy_files
+ (files ../ocaml/*.ml))
+
+(mdx
+ (files "2022-09-02-where-recursion-hides.md")
+ ;  (preludes foo.ml)
+ )

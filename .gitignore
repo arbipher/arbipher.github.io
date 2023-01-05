@@ -2,12 +2,13 @@ _site
 .jekyll-metadata
 .DS_Store
 .jade
-_drafts
+_drafts_local
 
 # editor
 .vscode
 
 # ocaml related
+ocaml
 .merlin
 _build
 
