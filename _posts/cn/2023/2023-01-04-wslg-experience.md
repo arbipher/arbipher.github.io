@@ -83,4 +83,3 @@ $ kill -9 131
 Linux常见的声音服务有ALSA和PulseAudio。跳过PulseAudio而直接使用ALSA的程序，有方法提出可以通过`libasound2` (ALSA library)里的插件来获得支持，详见<https://github.com/microsoft/wslg/issues/864>。其他issues里有人提到这个方法可行。不过我测试mame不通过。再等等官方的更新吧。
 
 另外，WSLg提供的是对GUI app的支持，目前并不提供对全desktop的支持（不能跑xfce）。这个问题里有讨论<https://askubuntu.com/questions/1385703/launch-xfce4-or-other-desktop-in-windows-11-wslg-ubuntu-distro>
-
