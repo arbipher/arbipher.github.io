@@ -5,18 +5,33 @@ category:
 - english
 ---
 
-{: .text-align-center}
-![funny](/assets/img/me_2021_summer_resize.jpg)
-<!-- {:height="70px" width="70px"} -->
 
-## # Shiwei Weng 翁士伟
+## # Shiwei Weng 翁士伟 
+
+<div class='profile-header'>
+
+  <div class='profile-item' >
+
+  <p class='profile-item-inner' markdown='1'>
 
 I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master's degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
 
+  </p>
+
+  <p class='profile-item-inner' markdown='1'>
+
 My research interests span several aspects of programming languages. I believe programming languages can provide solutions to problems in other areas of computer science. I am active in our lab's weekly [seminar](https://pl.cs.jhu.edu/seminars/fall-2020/) and happy to [chat]({{ site.baseurl }}{% link contact.md %}) about them.
 
+  </p>
 
-<!-- ~~**I am looking forward to summer internship 2020 (functional languages esp. OCaml preferred but all is fine). <a href="mailto:wengshiwei@jhu.edu">Email me</a> wengshiwei@jhu.edu**~~ -->
+  </div>
+
+  <div class='profile-photo'>
+    <img src="/assets/img/me_2021_summer_resize.jpg" alt="me">
+  </div>
+
+</div>
+
 
 <!-- ## Ongoing Research -->
 ## # Research

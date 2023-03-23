@@ -141,6 +141,24 @@ td {
 	padding: 3px;
 }
 
+.profile-header {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: -100px;
+}
+
+.profile-item {
+	flex: 2 1 0
+}
+
+.profile-photo {
+	flex: 1 1 0
+}
+
+.profile-photo img {
+	height: 70%;
+}
+
 .strong {
 	color: red;
 }
