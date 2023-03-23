@@ -14,7 +14,7 @@ category:
 
   <p class='profile-item-inner' markdown='1'>
 
-I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master's degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year4_PhD.pdf) (updated Aug 2021).
+I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master's degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year5_PhD_summer_internship.pdf) (updated Mar 2023).
 
   </p>
 
@@ -85,12 +85,16 @@ Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Dri
 
 ## # Open Source
 
+Make the better better via [PR](https://github.com/pulls?page=1&q=is%3Apr+author%3Aarbipher) and [Revision](https://reviews.llvm.org/p/arbipher/).
+
 [Maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss).
 <!-- - Make random RPs to OCaml and LLVM. -->
 
 <!-- - System Administrator of [our lab](https://pl.cs.jhu.edu/) -->
 
 ## # Misc
+
+ChatGPT's [propersy](assets/img/chatgpt-propersy.png) for this website.
 
 I [play](https://steamcommunity.com/id/arbipher/games/?tab=all&sort=playtime) video games. The unexamined game is not worth playing.
 

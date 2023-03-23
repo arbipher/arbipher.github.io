@@ -78,11 +78,19 @@ ul.no-style {
 	list-style-type: none;
 }
 
+
 .container {
-	width: 868px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100vw;
 }
+
+@media (min-width: 1000px) {
+	.container {
+		width: 868px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 
 pre.highlight {
 	overflow-x: auto;
