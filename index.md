@@ -14,7 +14,7 @@ category:
 
   <p class='profile-item-inner' markdown='1'>
 
-I am a fifth-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master's degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year5_PhD_summer_internship.pdf) (updated Mar 2023).
+I am a six-year Ph.D. student in the Department of Computer Science at Johns Hopkins University. My advisor is [Dr. Scott Smith](https://www.cs.jhu.edu/~scott/) and I am a member of [The Programming Languages Laboratory](http://pl.cs.jhu.edu/). I got my joint bachelor's degree from Fudan University and University College Dublin in 2013 and master's degree from JHU in 2018. My one-page CV is [here](/assets/pdf/CV_shiwei_weng_JHU_year5_PhD_summer_internship.pdf) (updated Mar 2023).
 
   </p>
 
@@ -69,7 +69,9 @@ Before graduate school, I took several jobs in start-ups and freelance work, mos
 
 ## # Professional
 
-- OOPSLA'23 Extended Review and Artifact Evaluation Committee
+- ECOOP'24 Extended Review and Artifact Evaluation Committee
+- OOPSLA'24 Artifact Evaluation Committee
+- OOPSLA'23 Extended Review and Artifact Evaluation Committee (Distinguished Artifact Reviewer)
 - Volunteer for SPLASH 2017, SPLASH 2018, ICFP 2020, OCaml 2020
 - Attend [OPLSS 2022](https://www.cs.uoregon.edu/research/summerschool/summer22/), [PLISS 2017](https://pliss2017.github.io/index.html), [PLMW@SPLASH 2017](https://2017.splashcon.org/track/splash-2017-PLMW#About)
 
@@ -85,9 +87,11 @@ Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Dri
 
 ## # Open Source
 
-Make the better better via [PR](https://github.com/pulls?page=1&q=is%3Apr+author%3Aarbipher) and [Revision](https://reviews.llvm.org/p/arbipher/).
+Help opam repository administrating via triaging [PR](https://github.com/ocaml/opam-repository/pulls) and weekly meeting [Note](https://github.com/ocaml/opam-repository/wiki/Meeting-notes).
 
 [Maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss).
+
+<!-- Make the world better via [PR](https://github.com/pulls?page=1&q=is%3Apr+author%3Aarbipher) and [Revision](https://reviews.llvm.org/p/arbipher/). -->
 <!-- - Make random RPs to OCaml and LLVM. -->
 
 <!-- - System Administrator of [our lab](https://pl.cs.jhu.edu/) -->

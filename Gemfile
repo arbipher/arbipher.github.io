@@ -4,4 +4,4 @@ gem 'jekyll-redirect-from'
 gem 'jekyll-analytics'
 gem 'jekyll-feed'
 gem 'jekyll-sitemap'
-gem "webrick", "~> 1.7"
+gem "webrick"

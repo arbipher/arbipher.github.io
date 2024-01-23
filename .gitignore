@@ -3,6 +3,8 @@ _site
 .DS_Store
 .jade
 _drafts_local
+vendor
+bin
 
 # editor
 .vscode
