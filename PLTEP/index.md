@@ -7,11 +7,18 @@
 You know what I mean.
 
 {: #book-table}
-| Intro     | Entity          | Rules (Logic) | Engine (Computing) |
-| --------- | --------------- | ------------- | ------------------ |
-| [Preface] | AST             | Types         | Type Checking      |
-|           | IR              | Polymorphic   | Static Analysis    |
-|           | Lambda Calculus |               |                    |
+| Intro     | Entity                         | Rules (Logic)            | Engine (Computing)        |
+| --------- | ------------------------------ | ------------------------ | ------------------------- |
+| [Preface] | [AST]                          | [Types]                  | [Type Checking]           |
+|           | [IR]                           | [Polymorphic]            | [Algorithm W]             |
+|           | [Lambda Calculus]              |                          | [Static Analysis]         |
+|           | [Simply Typed Lambda Calculus] |                          | [Abstract Interpretation] |
+|           |                                |                          | [Fixed point]             |
+|           |                                | [Operational Semantics]  |                           |
+|           |                                | [Small-step Semantics]   | [Small-step Semantics]    |
+|           |                                | [Big-step Semantics]     | [Big-step Semantics]      |
+|           |                                | [Denotational Semantics] | [Constraint Solving]      |
+|           |                                |                          | [Equation Theory]         |
 
 <style type="text/css" rel="stylesheet">
 .BlueViolet {
