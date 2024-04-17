@@ -7,7 +7,7 @@
 You know what I mean.
 
 {: #book-table}
-| Intro     | Entity                         | Rules (Logic)            | Engine (Computing)        |
+| Intro     | Entity                         | Rules (Logic)            | Device (Computing)        |
 | --------- | ------------------------------ | ------------------------ | ------------------------- |
 | [Preface] | [AST]                          | [Types]                  | [Type Checking]           |
 |           | [IR]                           | [Polymorphic]            | [Algorithm W]             |
