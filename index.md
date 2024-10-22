@@ -78,10 +78,12 @@ Before graduate school, I took several jobs in start-ups and freelance work, mos
 ## # Teaching
 
 - Head Teaching Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 18 (evaluation [1](/assets/pdf/EN.601.426.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf) [2](/assets/pdf/EN.601.626.01.SP18PrinciplesofProgrammingLanguages_ScottSmith.pdf)) / 19 ([evaluation](/assets/pdf/EN.601.426.01.SP19PrinciplesofProgrammingLanguages_ScottSmith.pdf))
-- Course Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 20 / 21 /22
-- Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20 / 21 / 22
+- Course Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 20 / 21 / 22 / 23 / 24
+- Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20 / 21 / 22 / 23 / 24
 
 ## # Publications
+
+Kelvin Qian, Scott Smith, Brandon Stride, Shiwei Weng, Ke Wu, OOPSLA 2024 [[page](https://2024.splashcon.org/details/splash-2024-oopsla/131/Semantic-Type-Guided-Bug-Finding)] [[doi](https://dl.acm.org/doi/10.1145/3689788)] [[pdf](https://dl.acm.org/doi/pdf/10.1145/3689788)] [[repo](https://github.com/JHU-PL-Lab/jaylang)]
 
 Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Driven Symbolic Evaluation, ICFP 2020 [[page](https://icfp20.sigplan.org/details/icfp-2020-papers/22/Higher-Order-Demand-Driven-Symbolic-Evaluation)] [[doi](https://dl.acm.org/doi/10.1145/3408984)] [[pdf](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/papers/icfp20-ddse-full.pdf)] [[repo](https://github.com/JHU-PL-Lab/odefa)] [[talk](https://talks.cs.umd.edu/talks/2657) ([slide](assets/pdf/2020-ddse-umd.pdf))]
 
