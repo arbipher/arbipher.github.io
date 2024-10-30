@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Re-motivated to write blogs
+title: Re-motivated to Write Blogs
 comments: true
 category:
 - english

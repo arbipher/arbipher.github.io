@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Where recursion hides
+title: Where Recursion Hides
 comments: true
 category:
 - english
