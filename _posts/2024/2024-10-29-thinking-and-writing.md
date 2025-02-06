@@ -13,8 +13,7 @@ I recently read [Writes and Write-Nots](https://paulgraham.com/writes.html?conti
 >
 > If you're thinking without writing, you only think you're thinking.
 
-I like the sentence, but I wish to check Lamport really said that. By some searching, I can confirm it. It's from his TLA+ [slide](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/leslie_lamport.pdf) in 2016, in which he said (How to Think
-):
+I like the sentence, but I wish to check Lamport really said that. By some searching, I can confirm it. It's from his TLA+ [slide](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/leslie_lamport.pdf) in 2016, in which he said (How to Think):
 
 > “Writing is nature’s way of letting you know how sloppy your thinking is.” Guindon
 > 
