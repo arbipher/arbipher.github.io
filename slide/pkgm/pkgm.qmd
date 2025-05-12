@@ -1,0 +1,703 @@
+---
+title: "Package Managers à la Carte"
+subtitle: "NJPLS @ Jane Street, 2025 May"
+author: 
+  - name: "**Shiwei Weng**"
+    affiliation: "Johns Hopkins University<br><img src='images/jhu-logo.png' class='author-image' />"
+  - name: "Logan Kostick"
+    affiliation: "Johns Hopkins University<br><img src='images/jhu-logo.png' class='author-image' />"
+  - name: "Michael Rushanan"
+    affiliation: "Johns Hopkins University<br><img src='images/jhu-logo.png' class='author-image' />"
+  - name: "Scott Smith"
+    affiliation: "Johns Hopkins University<br><img src='images/jhu-logo.png' class='author-image' />"
+
+filters:
+  - d2
+  - fragment.lua
+
+d2:
+  layout: elk
+  theme: "GrapeSoda"
+
+tbl-cap-location: bottom
+
+format:
+  revealjs:
+    css: styles.css
+    slide-number: true
+    slide-class: smaller
+    math:
+      font: stix
+    mermaid: 
+      theme: default
+      fig-responsive: false
+
+project:
+  output-dir: ../../_site/quarto/
+
+---
+
+### Package Managers are Ubiquitous but ...
+
+- Real-world package managers are not easy to understand and reason about 
+  - whether they make mistakes, or users are just confused
+
+::: {.fff-0}
+- Some popular languages may have too many package managers
+  - e.g. `python` has `pip`, `conda`, `poetry`, `uv`, but **why?**
+:::
+
+::: {.fff-1}
+- Some **languages** may lack one
+  - e.g. `shell`, `cmake`, `menhir`, `dune`, etc
+  - e.g. LLM Prompts, λ-calculus or DSLs you have invented
+:::
+
+::: notes
+Opening-Outline, 1/5, 3m
+
+a rule of thumb: if sth has a syntax and you often copy-and-paste it, 
+that language must be beneficial for having a package manager
+:::
+
+---
+
+### Current State of Package Managers
+
+> Any sufficiently complicated C or Fortran program contains an **ad hoc**, **informally-specified**, **bug-ridden**, **slow implementation** of half of Common Lisp.
+>
+> — Greenspun’s Tenth Rule
+
+<br>
+
+It also applies to package managers.
+
+::: notes
+quick next two
+Opening-Outline, 2/5, 3m
+:::
+
+---
+
+### Goals
+
+- **Principled and modular** (vs *ad hoc*)
+- **Formally specified** (vs *informally-specified*)
+- *Sound and verified* (vs *bug-ridden*)
+- *Efficient and scalable* (vs *slow implementation*)
+
+::: notes
+Opening-Outline, 3/5, 3m
+
+This talk and our current work focuses on the first two
+
+**Formally** is the opposite of **informally**, not mean dependent-typed
+:::
+
+---
+
+### Approach and Aim
+
+- Our approach
+  - Distill a precise vocabulary for package managers (PKGM)
+  - Understand and reason about their structures and operations  
+  - Build a proof-of-concept framework `tola` (Thousands of Languages)
+
+::: {.fff-0}
+- Our aims
+  - Hit the goals of the previous slide (principled/sound/efficient/scalable)
+  - Allow users to derive PKGM for their languages
+  - Help understand and address real-world PKGMs
+:::
+
+::: notes
+Opening-Outline, 4/5, 3m
+
+Our aims ranges from the academic ideals or some ultimate visions
+
+Besides, it's also practical and educational
+
+After warming up, go deep into two parts:
+  
+- Distributed Stores equipped with Version Logic
+:::
+
+---
+
+### Outline of the Talk
+
+- Vocabulary
+  - Clarify terms like `package name` and `version`
+
+- Package Stores
+  - We treat PKGMs as _distributed "versioned-key"-value maps_ with explicit local and remote stores
+
+- Version Logic
+  - A formal approach to define dependency and their operations that every PKGM (mostly) implements
+
+::: notes
+  Opening-Outline 5/5, 3m
+
+  Vocabulary, 2, 5m
+
+  I could do a 1-hour talk for clarifying the vocabulary, however,
+  we want to show that even the simple-looking terms may be subtle
+
+  Then for the talk, we will focus on two essential abstractions of PKGM
+:::
+
+---
+
+### What is _Package Name_ and _Version_, really?
+
+- `foo`
+  - ::Package name `foo`::1
+- `foo.1.0`
+  - ::Version `1.0` ::2
+- `foo.1.1.bugfix`
+  - ::Version `1.1.bugfix`::2
+- `foo_1.1-2_amd64`
+  - ::Version `1.1-2`::2
+  - ::Platform `amd64`::3
+    - ::less interesting when two platforms are compared::3
+
+::: notes
+Vocabulary, 1/2, 5m
+
+platform can also be called build, architecture, release
+:::
+
+---
+
+### The Vocabulary Is Messy
+
+- Package managers don't agree on common terms
+  - e.g. _package_, _project_, _library_, _application_, _module_, _workspace_
+
+:::{.fff-0}
+- Package managers use metaphors for terms
+  - e.g. _wheel_, _gem_, _switch_, _rack_, _keg_, _bottle_
+:::
+
+:::{.fff-1}
+- Other systems (build systems, compilers, etc) also use these terms but may have subtle different meanings
+:::
+
+::: notes
+Vocabulary, 2/2, 5m
+
+We are working on a uniform naming
+
+As we will show in the Package Stores and Version Logic
+:::
+
+---
+
+### Where are Packages Kept in the Real-World?
+
+- Stored local to the user
+  - _system-wise_: in some (global) system directory
+  - _project-wise_: near the project directory
+- Stored remotely, on some servers
+
+::: {.fff-0}
+- Each of these locations — a local directory, or a remote source
+  - acts as an **isolated place for packages**.
+- We name each such package place a **Package Store**
+:::
+
+::: notes
+Store, 1/6, 9m
+:::
+
+---
+
+### Local Package Stores in the Real-World
+
+<div class="r-stack">
+
+- system-wise
+  - ::`opam switch create` – creates a local isolated store ::1
+  - ::`python -m venv` – installs into the virtualenv ::1
+  - ::`gem install --install-dir` – local install path for RubyGems ::1
+- project-wise
+  - ::`npm install` – installs into `node_modules/` in the project ::2
+  - ::`bundle config set --local cache_path vendor/cache` – caches resolved packages locally::2
+  - ::`brew --prefix <path>` – local installs under custom prefix path::2
+
+  <img
+    class="fragment"
+    style="position: absolute; bottom: 2em; right: 2em; z-index: 10;"
+    src="images/switch.png"
+    width="600"
+  />
+
+</div>
+
+::: notes
+Store, 2/6, 9m
+
+  Usually, you can have multi local store but just one is active.
+  virtualenv (concept) vs site (implementation of searchpath), 
+
+  This is a real question from a PL student
+:::
+---
+
+### Remote Package Stores in the Real-World
+
+- Names for remote stores also vary widely
+  - repository, index, registry, (gem) server, archive mirror, Personal Package Archive(PPA), tap
+
+- Official public stores
+  - `opam`: opam repository (Git-based, versioned)
+  - `pip`: Python Package Index (PyPI)
+  - `npm`: npm registry
+  - `RubyGems`: rubygems.org
+  - `dpkg+apt`: Debian archive mirrors
+
+::: notes
+quick page
+
+Store, 3/6, 9m
+
+You can have multiple remote stores.
+
+:::
+
+---
+
+### Store Structures in Our Perspective
+
+- PKGMs are _Distributed_ "Versioned-key"-value maps
+  - Each distributed store, locally or remotely, is heterogeneous 
+
+::: {.fff-0}
+- Multiplicity of choice for key:
+  - **Unique**: only one version per package in a store
+  - vs **Multi**: multiple versions coexist
+:::
+
+::: {.fff-1}
+- Structure choice for value:
+  - **Flat**: packages are only put in a single directory without nesting
+  - vs **Nested**: packages are organized in a hierarchical structure (nested directories)
+:::
+
+::: notes
+Store, 4/6, 9m
+
+:::
+
+---
+
+### Stores of Package Managers
+
+<div style="font-size: 50%">
+
+| PKGM     | Target          | Local Store           | Local Structure | Remote Store                | Remote Structure |
+| -------- | --------------- | --------------------- | ----------------- | --------------------------- | ---------------- |
+| opam     | OCaml           | switch                | unique flat     | opam repository             | multi flat       |
+| pip      | Python          | virtual environment   | unique flat     | Python Package Index (PyPI) | multi flat       |
+| npm      | Node.js         | `node_modules`        | unique nested   | npm registry                | multi flat       |
+| RubyGem  | Ruby            | System-wide directory | multi flat      | RubyGems.org                | multi flat       |
+| bundler  | Ruby            | `vendor/bundle`       | unique flat     | RubyGems.org                | multi flat       |
+| dpkg+apt | Debian packages | System-wide directory | multi flat      | Debian package repository   | multi flat       |
+
+</div>
+
+::: {.fff-0 .small}
+- Most remote stores use a `multi` `flat` structure
+- ::`npm` uses a `nested` local store — used to cause issues::1
+- ::`RubyGem` uses a `multi` local store::2 ::- causes many troubles::3
+- ::dpkg's `multi` local store requires switching symbolic links via `update-alternatives`::4
+:::
+
+::: notes
+next page is code
+
+Store, 5/6, 9m
+:::
+
+---
+
+### `tola` Code for Stores
+
+:::: {.columns}
+
+::: {.column}
+```ocaml
+(* In Spec.config *)
+type store_kind = 
+  Directory | Git_repo
+type store_position = 
+  Local | Remote
+
+(* In Store *)
+module Pkg_store = 
+  Store.File_store_make (Package)
+
+type t = {
+  config : Spec.config;
+  local_store : Pkg_store.t;
+  remote_stores : Pkg_store.t list;
+  ...
+}
+```
+:::
+
+::: {.column .center}
+
+![](images/tola-remote.png)
+
+:::
+
+:::
+
+::: notes
+Store, 6/6, 9m
+
+Versioning, 9, 15m
+
+  Currently, tola has basic supports for local and remote store.
+
+  Given its modular nature, it's easy to adapt to pnpm's hardlink, or put it on S3
+
+  Now we shift to the next topic: version
+:::
+
+---
+
+### Versions in the Real-World
+
+- A **version** is a string — but often has internal structure
+  - e.g. SemVer `1.3.2` <==> `{major=1; minor=3; patch=2}`
+  - Each segment can be compared; precedence differs by position
+
+- Different ecosystems define different version schemes:
+  - **SemVer**: `MAJOR.MINOR.PATCH[-PRERELEASE][+BUILD]`
+    - ::_build metadata does not affect precedence_::1
+  - **Debian**: `[epoch:]upstream_version[-debian_revision]`
+    - ::Fields like `Architecture: amd64` are defined elsewhere::1
+
+::: notes
+Versioning (RW), 1/3, 12m
+:::
+
+---
+
+### Advanced Comparators in Package Managers
+
+<div style="font-size: 70%">
+
+| PKGM     | Version Scheme       | Advanced Comparators                             |
+| -------- | --------------------- | ----------------------------------------------  |
+| opam     | Debian versioning    | `conflicts`, `conflict-class`, `virtual package` |
+| pip      | version specifiers   | `~=` (compatible), `===` (arbitrary equality)    |
+| npm      | semantic versioning  | `~` (tilde), `^` (caret)                         |
+| RubyGem  | semantic versioning  | `~>` (pessimistic)                               |
+| dpkg+apt | Debian versioning    | `Breaks`, `Conflicts`                            |
+
+<br>
+
+</div>
+
+::: {.fff-0 }
+- Package managers define **advanced comparators**
+  - some are based on version schemes (e.g., `~`, `~>`, `^`),  
+  - but others are based on dependency relations (e.g., `conflicts`, `breaks`)
+:::
+
+::: notes
+Versioning (RW), 2/3, 12m
+
+arbitrary equality is defined as string equality
+  The primary use case for arbitrary equality is to allow for 
+  specifying a version which cannot otherwise be represented by this specification.
+:::
+
+--- 
+
+### Examples for Advanced Comparators 
+
+<br>
+
+<div style="font-size: 40%">
+
+| Name                      | Cmp   | PKGM    | Meaning                                   | Example Input     | Example Match Versions          |
+| ------------------- | ----  | ------- | ----------------------------------------- | ----------------- | ------------------------------- |
+| Compatible release        | `~=`  | pip     | Allows patch updates within same minor    | `~=1.2.3`         | `1.2.3`, `1.2.9` , not `1.3.0`   |
+|                           |       |         | Allows minor updates within same major    | `~=1.2`           | `1.2.0`, `1.9.9`::💥::1 , not `2.0.0`   |
+|                           |       |         |                                           | `~=1` (invalid) ::💥::2 | -                               |
+| Exact match               | `===` | pip     | Exact string match                        | `===1.2.3`        | Only `1.2.3`                    |
+| Tilde                     | `~`   | npm     | Allows patch updates within same minor    | `~1.2.3`          | `1.2.3`, `1.2.9` , not `1.3.0`   |
+|                           |       |         |                                           | `~1.2`            | `1.2.0`, `1.2.9`::💥::1 , not `1.3.0`   |
+|                           |       |         |                                           | `~1`              | `1.0.0`, `1.9.9`, not `2.0.0`   |
+| Caret                     | `^`   | npm     | Allows minor updates within same major    | `^1.2.3`          | `1.2.3`, `1.9.9`, not `2.0.0`   |
+| Pessimistic Operator      | `~>`  | RubyGem | Allows patch updates within same minor    | `~> 1.2.3`        | `1.2.3`, `1.2.9`, not `1.3.0`   |
+|                           |       |         |                                           | `~> 1.2`          | `1.2.0`, `1.2.9`::💥::1 , not `1.3.0`   |
+|                           |       |         | *may surprise some people - gem guide*    | `~> 1`            | `1.0.0`, `1.9.9`, not `2.0.0`   |
+
+: 
+
+</div>
+
+<!-- [^1]: https://guides.rubygems.org/patterns/ -->
+
+<br>
+
+::: {.fff-0 .small-xs}
+- pip's compatible `~=`, npm's tilde `~`, and gem's pessimistic `~>` look similar, but
+  - **informally-specified** from document and implementation 
+  - They differ on `~= 1.2`, `~ 1.2`, `~> 1.2` ::💥::1 and differ on `~= 1`, `~ 1`, `~> 1` ::💥::2
+:::
+
+::: notes
+Versioning (RW), 3/3, 12m
+
+This is a quick testing I do in minutes to try on the possible combinations
+
+pip's compatible is polymorphic on given version, but invalid on major only
+npm's tilde is really patch-update only
+gem's Pessimistic is supposed to be patch-update only, but may surprise
+
+Enough!
+:::
+
+---
+
+### Version Logic: A Formal Foundation
+
+- Captures dependency constraints using logical formulas
+- Clarifies the behavior of version comparators and resolution rules
+- Supports deterministic and composable resolution
+
+---
+
+### Version Logic is Based on Boolean Logic 
+
+<div style="font-size: 60%">
+
+| Concept            | Boolean Logic                                   | Version Logic                                    |
+| ------------------ | ----------------------------------------------- | ------------------------------------------------ |
+| Literals           | `true`, `false`                                 | ::extend with version values (e.g., `1.2.3`)::2 |
+| Variables          | propositional variables (`P`, `Q`)              | ::package names (`foo`, `bar`)::1                |
+| Formulas           | `P ∧ Q`, `¬P ∨ Q`                               | ::`foo >= 1.0`, `foo.major <= bar.major` (version ops) ::3      |
+| Connectives        | `∧`, `∨`                                        | ::`∧`, `∨`, (**advanced comparators**)::3        |
+| Satisfiability     | whether formula is `true` under some assignment | ::whether a version solution exists::4           |
+| Assignment         | `[P = true, Q = false]`                         | ::`[foo == 1.1, bar = 1.2]`::4                   |
+| Solve              | `solve(exp)`; &nbsp; `MaxSAT.solve(exp)`             | ::`solve_max(exp, f)`::5 |
+| ::Determinism::5   | ::arbitrary assignment::5                       | ::**resolves priorities**::5                    |
+
+</div>
+
+::: notes
+Version logic, 1/7, 15m
+
+explain `solve`, `maxsat.solve`, `solve_max`
+:::
+
+---
+
+### Resolving constraints with `solve_max` {.smaller}
+
+`solve_max(𝜑,f)` finds a satisfiable assignment `𝜑=` for constraints `𝜑` that maximize `f`. 
+
+- Returns `SAT(𝜑=)` or `UNSAT`.
+- `f` takes an assignment `𝜑=` and returns an (integer) score.
+
+It's not MaxSAT (maximizing # satisfied clauses)
+  - but more similar to an optimizing SAT solver (which finds an assignment that maximizes a scoring function).
+
+::: notes
+Version logic, 2/7, 15m
+:::
+
+---
+
+### Dependency Resolution
+
+- Given a list of dependencies, a.k.a constraints, version logic formula,
+  ask for a **preferred** satisfiable assignment
+
+::: {.fff-0}
+- Common Resolving Preferences
+  - **Upgrade most packages** locally installed
+  - Make the **least change** for locally installed packages
+  - **Allow downgrade** for locally installed packages
+  - **Relaxed**, make a best effort to fulfill user commands
+:::
+
+::: {.fff-1}
+- A **Resolving Policy** is a list of ordered Resolving Preferences
+  - PKGM can invoke `solve_max(𝜑,f)` with the combination of `𝜑` and `f`
+  - `𝜑` can be different
+:::
+
+::: notes
+Version logic, 4/7, 15m
+:::
+
+---
+
+### Scoring Function `f` Candidates {.smaller}
+
+- `f = count_max(𝜑=, S)`: 
+  - `S` is a package store
+  - \# of packages at the max version (typically in remote store $S^R$)
+- ::`f = count_in_store(𝜑=, S)`: ::1
+  - :: \# of assigned versions that exist in local store $S^l_0$ ::1
+- :: `f = count_fulfilled(𝜑=, N^I, N^D)`: ::2
+  - :: \# of install($N^I$)/uninstall ($N^D$) commands fulfilled ::2
+
+::: notes
+Version logic, 3/7, 15m
+:::
+
+---
+
+### Encoding Package Stores {.smaller}
+
+::: {.columns .center width="35%"}
+```{mermaid}
+%%| file: assets/resolution_setting.mmd
+```
+:::
+
+::: {.fff-0}
+
+<div style="zoom: 0.5">
+$$
+\begin{aligned}
+\varphi_s = \text{store_to_constraint}(S^R) =\quad
+&\bigwedge \left\{ 
+    \begin{aligned}
+        &(\text{foo} = 1.0) \Rightarrow (\text{std} = 1.0), \\
+        &(\text{foo} = 1.1) \Rightarrow ((\text{std} = 1.0) \lor (\text{std} = 1.1)), \\
+        &(\text{bar} = 1.0) \Rightarrow (\text{std} = 1.0), \\
+        &(\text{bar} = 2.0) \Rightarrow (\text{std} = 2.0)
+    \end{aligned}
+\right\}
+\end{aligned}
+$$
+
+</div>
+:::
+
+::: notes
+Version logic, 5/7, 15m
+:::
+
+---
+
+
+### Encoding Example for preference `update-most` {.columns}
+
+::: {.column width="40%"}
+#### Pre
+```{mermaid}
+%%| file: assets/resolve_upgrade_foo_from_std10_pre.mmd
+```
+
+#### Post
+```{mermaid}
+%%| file: assets/resolve_upgrade_foo_from_std10_post.mmd
+```
+:::
+
+::: {.column style="margin-left:2em;"}
+Initial state: `std 1.0`.
+
+Action: install `foo`.
+
+Policy: `upgrade_most`
+
+Solution:
+
+::: {.fff-0}
+
+<div style="zoom: 0.6">
+
+$$
+\text{solve_max}(\varphi_{o} \land \varphi_{i} \land \varphi_s,\ \texttt{count_max}(\cdot,\ S):)
+$$
+
+Where:
+
+- ::$\varphi_s$ is the store-to-constraint for all store packages::0
+- ::$\texttt{count_max}$ rewards assignments using latest versions from remote stores ::1
+- ::$S$ is the remote store ::1
+- ::$\varphi_{o} = \text{no_downgrade}(S^l_0) =\ (\texttt{std} \geq 1.0)$::2
+- ::$\varphi_{i} = \text{ensure_install}(N^I_0) =\ (\texttt{foo} > 0)$::3
+
+</div>
+:::
+
+:::
+
+::: notes
+Version logic, 6/7, 15m
+:::
+
+---
+
+### Dependency Resolution within Version Logic
+
+- Can be defined in `solve_max(deps, scoring_function)`
+  - Resolving priorities should be defined in this approach  
+
+- Different from existing PKGMs that allow using external solvers or solving library `openSUSE/libsolv`
+  - **Version Logic** starts from precise definitions from principles
+
+::: notes
+Version logic, 7/7, 15m
+:::
+
+---
+
+### Recap {.small}
+
+- Vocabulary 
+- Package managers are **Distributed "Versioned-key"-value Map**
+  - Local and remote stores with designated key-value structure
+- **Version Logic** provides a formal logic of version constraints
+- `tola` code has batteries-included module and module functors for the above
+  - Derive your choice of package manager components *à la carte*
+
+::: notes
+Recap! Welcome home!
+
+Related Work:
+  Build Systeme à la Carte [Mokhov et al. 2020]
+:::
+
+---
+
+::: {.centered-slide}
+Thanks
+
+Q & A
+
+&nbsp;
+:::
+
+::: notes
+
+to-do:
+  I have two questions for you:
+    why does ruby have both RubyGems and bundler?
+    why does debian have dpkg and apt?
+:::
+
+---
+
+### Ongoing Work
+
+- Package Soundness
+  - Package Soundness: either version compability or dependencies are syntactical guarantee, how can we reach semantic safety?
+  - Robin Milner [Milner 1978] says for Type Soundness:
+  > Well-typed programs cannot ”go wrong”.
+    - It connects two systems: one type system and one run-time system
+    - spectrum: gradual typing, semantic typing
+  > Well-packaged programs go?
+    - three systems: one pkgm, compiler/interpreter, one run-time system

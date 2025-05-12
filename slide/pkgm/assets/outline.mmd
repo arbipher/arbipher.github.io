@@ -1,0 +1,25 @@
+flowchart LR
+%%{ init: {
+  "themeVariables": {
+    "fontSize": "26px",
+    "fontFamily": "monospace"
+  },
+  "flowchart": {
+    "wrap": true,
+    "htmlLabels": false,
+    "useMaxWidth": true
+  }
+}}%%
+  B[Real-world Pkgms]
+  B --> C[Distributed Stores]
+  B --> D[Version Logic]
+  D --> E[Pkgm a la Carte]
+  D --> B3[Dependency]
+  D --> D2["Resolution (Solving + Policy)"]
+  D --> G[Package Soundness]
+  C --> E
+  E --> F[Framework tola + Demo]
+
+%% classDef default fill:#fff,stroke:#0af,stroke-width:2px,color:#000;
+%% style G stroke-dasharray: 5 5;
+%% linkStyle default stroke:#222, color:#000, background:#fff, font-size:14px

@@ -1,0 +1,292 @@
+# To-do
+Another motivation is just to make people clear
+    when one has to cooperate with all you
+    The Missing Semester of Your CS Education
+
+Version Logic doesn't model platforms or architectures
+
+Lockfile
+
+npm v3 (2015) is not nested 
+
+# Slide to-do
+
+An alighment table for _package_
+
+### Ongoing Work
+
+- Resolving a la Carte
+  - Resolving Semantics: a core calculus for dependency resolving, where program using packages are like open λ terms.
+  - similarity package (lib/app), shared/exe (Linking and Loader a la Carte)
+    - design space: static-linked for packages
+
+<!-- 
+---
+
+### least_change_foo {.columns}
+
+::: {.column width="40%"}
+#### Pre
+```{mermaid}
+%%| file: assets/resolve_least_change_foo_pre.mmd
+```
+
+#### Post
+```{mermaid}
+%%| file: assets/resolve_least_change_foo_post.mmd
+```
+:::
+
+::: {.column width="50%" style="margin-left:2em;"}
+Initial state: `std 1.0`.
+
+Action: install `foo`.
+
+Policy: `least_change`
+:::
+
+---
+
+### upgrade_least_foo_bar_std10 {.columns}
+
+::: {.column width="40%"}
+#### Pre
+```{mermaid}
+%%| file: assets/resolve_upgrade_least_foo_bar_std10_pre.mmd
+```
+
+#### Post
+```{mermaid}
+%%| file: assets/resolve_upgrade_least_foo_bar_std10_post.mmd
+```
+:::
+
+::: {.column width="50%" style="margin-left:2em;"}
+Initial state: `std 1.0`.
+
+Action: install `foo` and `bar`.
+
+Policy: `least_change`
+:::
+
+---
+
+### upgrade_foo_from_std11 {.columns}
+
+::: {.column width="40%"}
+#### Pre
+```{mermaid}
+%%| file: assets/resolve_upgrade_foo_from_std11_pre.mmd
+```
+
+#### Post
+```{mermaid}
+%%| file: assets/resolve_upgrade_foo_from_std11_post.mmd
+```
+:::
+
+::: {.column width="50%" style="margin-left:2em;"}
+Initial state:  `std 1.1`.
+
+Action: install `foo`.
+
+Policy: `upgrade_most`
+:::
+
+---
+
+### allow_downgrade_foo_bar {.columns}
+
+::: {.column width="40%"}
+#### Pre
+```{mermaid}
+%%| file: assets/resolve_allow_downgrade_foo_bar_pre.mmd
+```
+
+#### Post
+```{mermaid}
+%%| file: assets/resolve_allow_downgrade_foo_bar_post.mmd
+```
+:::
+
+::: {.column width="50%" style="margin-left:2em;"}
+Initial state: `std 1.1`.
+
+Action: install `foo` and `bar`.
+
+Policy: `allow_downgrade`
+:::
+
+---
+
+### downgrade_from_r1 {.columns}
+
+::: {.column width="40%"}
+#### Pre
+```{mermaid}
+%%| file: assets/resolve_downgrade_from_r1_pre.mmd
+```
+
+#### Post
+```{mermaid}
+%%| file: assets/resolve_downgrade_from_r1_post.mmd
+```
+:::
+
+::: {.column width="50%" style="margin-left:2em;"}
+Initial state: `foo 1.1` and `std 1.1`.
+
+Action: isntall `bar`.
+
+Policy: `allow_downgrade`
+:::
+
+-->
+
+<!-- ---
+
+### Version Logic Grammar
+
+::: {.center}
+![](images/vl-grammar.png){width=70%}
+::: -->
+
+---
+
+### Resolve Definition {.smaller}
+**SS: probably no time for this**
+
+<div style="zoom: 0.6">
+Let $\Psi$ be a package store, $\Psi^l_0$ is the active local store, $\Psi^R = [\Psi^r_0, \Psi^r_1, ...]$ be the list of remote stores, $N^I = [n_{i_0}, n_{i_1}, ...]$ be the list of packages to install, and $N^D = [n_{d_0}, n_{d_1}, ...]$ be the list packages to uninstall, $\rho = [c_1,...]$ be the resolve policy. $\varphi^=$ is the solution assignment.
+
+We define `resolve` with respect to a resolve policy. It sequentially tries to resolve for each resolution priority:
+
+$$
+\text{resolve}(\Psi^l_0, \Psi^R, N^I, N^D, \rho) =
+\begin{cases}
+    {c_1}(\varphi^=_1) & \text{if } \text{resolve}_{c_1}(\Psi^l_0,\Psi^R,N^I,N^D) = \texttt{SAT}(\varphi^=_1) \\
+    {c_2}(\varphi^=_2) & \text{if } \text{resolve}_{c_1}(\Psi^l_0,\Psi^R,N^I,N^D) = \texttt{UNSAT} \\
+        & \text{and } \text{resolve}_{c_2}(\Psi^l_0,\Psi^R,N^I,N^D) = \texttt{SAT}(\varphi^=_2) \\
+    \vdots \\
+    \texttt{FAIL} & \text{if all previous cases are UNSAT}
+\end{cases}
+$$
+
+</div>
+
+::: {.fff-0}
+
+<div style="zoom: 0.6">
+
+For each resolve case $c_i$, it uses the same return type as `solve_max`, which is either `SAT` with a resolvable assignment or `UNSAT`:
+
+$$
+{\scriptstyle \text{resolve}}_{c_i}(\Psi^l_0,\Psi^R,N^I,N^D) =
+\begin{cases}
+    \texttt{SAT}(\varphi^=_i) & \text{if case } c_i \text{ is resolvable} \\
+    \texttt{UNSAT} & \text{otherwise.}
+\end{cases}
+$$
+
+</div>
+
+:::
+
+---
+
+### Minimal Operations of Package Stores
+
+<div style="font-size: 70%">
+
+| Operation          | Description                                                                 |
+|----------------------------|-------------------------------------------------------|
+| `create_store()`   | Create an empty store and return it                                         |
+| `find_package(Ψ, n, κ)` | Lookup a package `n` with version `κ` in store `Ψ` (κ optional in flat stores) |
+| `add_package(Ψ, n, κ, p)` | Add a package `p` with name `n` and version `κ` to store `Ψ`            |
+| `remove_package(Ψ, n, κ)` | Remove a package `n@κ` from store `Ψ` (κ optional in flat)              |
+| `set_package(Ψ, n, κ)`     | If `κ` is given, fetch package; otherwise remove version 0              |
+
+</div>
+
+::: {.fff-0 .small}
+- These operations are implemented in `tola` as module interfaces
+:::
+
+---
+### Aside: Language PKGMs and System PKGMs
+
+- Not currently focused for this work
+- Usually not interested in the value part of a map
+  - melely distributed "versioned-key"-**value** map
+  - 
+
+```ocaml
+(* OCaml library: Map *)
+module Make: 
+functor (Ord : OrderedType) -> S  with type key = Ord.t
+```
+
+---
+
+## Appendix
+
+## Term _Project_
+
+- All the code under development in a scope (directory)
+  - developer-centric (build system)
+  - a project can contain multiple packages
+    - (yes) ocaml/opam, debian 
+    - python/pip, ruby/gem
+- Another name for a package
+  - rust/cargo
+    - a workspace can contain multiple packages
+- Not explicit used
+  - debian
+
+## Aside: Search Path Pattern
+
+- Package managers often follow a **search path** to locate or load packages:
+  - A prioritized list of directories
+  - mangled system-wise and project-wise
+
+- **Examples:**
+  - `site-packages` / `sitelib` (Python): the default install location
+    - Controlled via `PYTHONPATH` for runtime searching
+  - `Gem.path` / `$LOAD_PATH` (Ruby): installed gem locations
+    - Used by `require` and `gem` commands to resolve loading
+  - System-level: `/usr/lib`, `/usr/local/lib`
+    - `LD_LIBRARY_PATH`
+
+<!-- presenter:
+  Explain how even simple tools like pip and gem have environment-aware search paths,
+  and how this complicates reasoning unless formalized. -->
+
+## Aside: if not using `python venv`
+
+![center](images/pip-sys.png)
+
+---
+
+::: notes
+
+```shell
+npm install semver -g
+semver -r "~1.2.3" 1.2.4   # ✅
+semver -r "~1.2.3" 1.3.0   # ❌
+semver -r "^1.2.3" 1.9.9   # ✅
+semver -r "^1.2.3" 2.0.0   # ❌
+
+pip3 install packaging
+SpecifierSet("~=1.4.2").contains("1.4.9")  # True
+SpecifierSet("~=1.4.2").contains("1.5.0")  # False
+SpecifierSet("~=1").contains("1.4.9")
+SpecifierSet("===1.4.2.post1").contains("1.4.2.post1")  # True
+SpecifierSet("===1.4.2").contains("1.4.2.post1")  # False
+
+irb
+require 'rubygems'
+Gem::Requirement.new("~> 2.2").satisfied_by?(Gem::Version.new("2.2.5"))
+Gem::Requirement.new("~> 2.2").satisfied_by?(Gem::Version.new("3.0.0"))
+
+```
+:::

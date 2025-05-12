@@ -1,0 +1,52 @@
+%%{ init: {
+  'themeVariables': {
+    'edgeLabelBackground': 'transparent',
+    "fontSize": "20px",
+    "fontFamily": "monospace",
+    'textAlign': 'center',
+    'wrap': true
+    }
+} }%%
+flowchart LR
+  subgraph FOO [foo]
+    direction TB
+    foo20[ ]:::invisible
+    foo11["foo 1.1"]
+    foo10["foo 1.0"]
+  end
+
+  subgraph STD [std]
+    direction TB
+    class STD subgraphStyle;
+    std20["std 2.0"]
+    std11["std 1.1"]
+    std10["std 1.0"]
+  end
+
+  subgraph BAR [bar]
+    direction TB
+    bar20["bar 2.0"]
+    bar11[ ]:::invisible
+    bar10["bar 1.0"]
+  end
+  
+  FOO ~~~ STD
+  STD ~~~ BAR
+  foo10 ~~~ std10 ~~~ bar10
+  %% foo11 ~~~ std11 ~~~ bar11
+  %% foo20 ~~~ std20 ~~~ bar20
+  foo10 -->|dep| std10
+  foo11 -.->|either| std10
+  foo11 -.->|either| std11
+  bar10 -->|dep| std10
+  bar20 -->|dep| std20
+  linkStyle default stroke:#222, color:#000, background:#fff
+  classDef subgraphStyle fill:#fff, stroke:#0af, stroke-width:2px, color:#000
+  class FOO,STD,BAR subgraphStyle
+  classDef invisible fill:#fff, stroke:#fff, stroke-width:0px
+  classDef foo fill:#e0f8e0, stroke:#0af, stroke-width:2px,color:#000
+  classDef std fill:#e0eaff, stroke:#0af, stroke-width:2px,color:#000
+  classDef bar fill:#ffe0e0, stroke:#0af, stroke-width:2px,color:#000
+  class foo10,foo11 foo
+  class std10,std11,std20 std
+  class bar10,bar20 bar

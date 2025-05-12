@@ -1,0 +1,16 @@
+%%{ init: { 'theme': 'default' } }%%
+flowchart TB
+    subgraph Legend_Node_Styles
+        A1["selectedLocal"]:::selectedLocal
+        A2["selectedInstall"]:::selectedInstall
+        A3["faded"]:::faded
+    end
+
+    subgraph Legend_Subgraph_Style
+        G1["selectedGroup"]:::selectedGroup
+    end
+
+    classDef selectedLocal stroke:#000, stroke-width:4px;
+    classDef selectedInstall stroke:#0077cc, stroke-width:4px;
+    classDef faded fill:#f5f5f5, stroke:#ccc, color:#aaa;
+    classDef selectedGroup fill:#fff2cc, stroke:#f90, stroke-width:4px, stroke-dasharray: 6 3;

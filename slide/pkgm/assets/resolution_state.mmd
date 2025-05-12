@@ -1,0 +1,46 @@
+%%{ init: {
+  'themeVariables': {
+    'edgeLabelBackground': 'transparent',
+    "fontFamily": "monospace",
+    'textAlign': 'center',
+    'wrap': true
+    }
+} }%%
+flowchart LR
+  s1["std 1.1"]:::std
+  s0["std 1.0"]:::std
+  subgraph r1 [ ]
+    direction TB
+    r1foo["foo 1.1"]:::foo
+    r1std["std 1.1"]:::std
+  end
+  subgraph r2 [ ]
+    direction TB
+    r2foo["foo 1.1"]:::foo
+    r2std["std 1.0"]:::std
+  end
+  subgraph r3 [ ]
+    direction TB
+    r3bar["bar 1.0"]:::bar
+    r3foo["foo 1.1"]:::foo
+    r3std["std 1.0"]:::std
+  end
+    unsat["UNSAT"]:::unsat
+  unsat ~~~ s1
+  s1 -->|"upgrade_most
+          least_change (foo)"| r1
+  s1 -->|"allow_downgrade (foo & bar)"| r3
+  s1 --- |"upgrade_most (foo & bar)
+          least_change (foo & bar)"| unsat
+  s0 -->|"upgrade_most (foo)"| r1
+  s0 -->|"least_change (foo)"| r2
+  s0 -->|"upgrade_most (foo & bar)
+          least_change (foo & bar)"| r3
+  r1 -->|"allow_downgrade (foo & bar)"| r3
+classDef subgraphStyle fill:#fff,stroke:#0af,stroke-width:2px,color:#000
+class r1,r2,r3 subgraphStyle
+classDef std fill:#e0eaff,stroke:#0af,stroke-width:2px,color:#000
+classDef foo fill:#e0f8e0,stroke:#0af,stroke-width:2px,color:#000
+classDef bar fill:#ffe0e0,stroke:#0af,stroke-width:2px,color:#000
+classDef unsat fill:#eee,stroke:#999,stroke-width:1px,color:#333
+linkStyle default stroke:#222, color:#000, background:#fff

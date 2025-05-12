@@ -1,0 +1,94 @@
+/* global setting for reval */
+
+.reveal .slide ul,
+.reveal .slide ol,
+.reveal .slide li {
+  font-size: 0.95em;
+}
+
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  margin-top: -0.3em !important;
+  /* margin-bottom: -0.1em !important; */
+}
+
+/* useful layout classes */
+.d2svg svg {
+  transform: scale(1.3);
+  transform-origin: top left;
+}
+
+.center {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.centered-slide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* vertical center */
+  align-items: center;
+  /* horizontal center */
+  text-align: center;
+}
+
+aside.aside-footnotes,
+.aside-footnotes {
+  font-size: 0.7em;
+  color: #666;
+}
+
+.diagram-title {
+  font-size: 0.7em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.diagram-title-small {
+  font-size: 0.4em;
+  text-align: center;
+}
+
+
+.small-xs {
+  font-size: 0.6em;
+}
+
+.small-xxs {
+  font-size: 0.1em;
+}
+
+/* special slide adjustment */
+.quarto-title-author-name,
+.quarto-title-affiliation 
+{
+  white-space: nowrap;
+}
+
+.author-image {
+  height:3em; 
+  vertical-align: middle; 
+  margin-bottom: 0.5em;
+}
+
+.thanks-big {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+
+/* mermaid */
+
+.labelBkg {
+  max-width: 600px !important;
+  white-space: normal !important;
+}
+
+.edgeLabel p {
+  line-height: 1.4;
+  white-space: normal !important;
+}

@@ -1,0 +1,92 @@
+%% Mermaid diagram generator for resolution steps
+%% This version represents the diagram plus highlight states for resolution logic
+
+%%{ init: {
+  'themeVariables': {
+    'edgeLabelBackground': 'transparent',
+    "fontSize": "20px",
+    "fontFamily": "monospace",
+    'textAlign': 'center',
+    'wrap': true
+    }
+} }%%
+flowchart LR
+  subgraph FOO [foo]
+    direction TB
+    foo20[ ]:::invisible
+    foo11["foo 1.1"]
+    foo10["foo 1.0"]
+  end
+
+  subgraph STD [std]
+    direction TB
+    std20["std 2.0"]
+    std11["std 1.1"]
+    std10["std 1.0"]
+  end
+
+  subgraph BAR [bar]
+    direction TB
+    bar20["bar 2.0"]
+    bar11[ ]:::invisible
+    bar10["bar 1.0"]
+  end
+
+  FOO ~~~ STD
+  STD ~~~ BAR
+  foo10 ~~~ std10 ~~~ bar10
+  %% foo11 ~~~ std11 ~~~ bar11
+  %% foo20 ~~~ std20 ~~~ bar20
+  foo10 -->|dep| std10
+  foo11 -.->|either| std10
+  foo11 -.->|either| std11
+  bar10 -->|dep| std10
+  bar20 -->|dep| std20
+
+  linkStyle default stroke:#222, color:#000, background:#fff
+
+  %% Base category styles
+  classDef foo fill:#e0f8e0, stroke:#ccc, stroke-width:2px, color:#000;
+  classDef std fill:#e0eaff, stroke:#ccc, stroke-width:2px, color:#000;
+  classDef bar fill:#ffe0e0, stroke:#ccc, stroke-width:2px, color:#000;
+
+  %% Role-based overlays
+  classDef selectedLocal stroke:#0077cc, stroke-width:4px, stroke-width:4px;
+  classDef selectedInstall stroke:#f90, stroke-width:4px;
+
+  %% Inactive nodes
+  classDef faded fill:#f5f5f5, stroke:#ccc, color:#aaa;
+
+  %% Subgraph hint for to-install selection
+  classDef subgraphStyle fill:#fff, stroke:#0af, stroke-width:2px, color:#000
+  classDef invisible fill:transparent, stroke:none, color:transparent
+  classDef selectedGroup fill:#fff2cc, stroke:#f90, stroke-width:4px, stroke-dasharray: 6 3;
+
+  %% Assign base categories (default for all nodes)
+  class foo10,foo11 foo
+  class std10,std11,std20 std
+  class bar10,bar20 bar
+
+
+  %% State: Initial: std1.0 installed, selecting foo & bar
+
+  class foo10 faded
+
+  class foo11 faded
+
+  class std10 selectedLocal
+
+  class std11 faded
+
+  class std20 faded
+
+  class bar10 faded
+
+  class bar20 faded
+
+
+  class FOO selectedGroup
+
+  class STD subgraphStyle
+
+  class BAR selectedGroup
