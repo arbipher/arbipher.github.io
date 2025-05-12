@@ -16,11 +16,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap  
 
-jekyll_analytics:
-  GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: UA-168108339-1      # Required - replace with your tracking id
-    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
-
 liquid:
   error_mode: 'warn'
 

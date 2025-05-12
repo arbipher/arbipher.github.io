@@ -6,7 +6,7 @@ category:
 ---
 
 
-## # Shiwei Weng 翁士伟 
+## # Shiwei Weng 翁士伟
 
 <div class='profile-header'>
 
@@ -32,32 +32,37 @@ My research interests span several aspects of programming languages. I believe p
 
 </div>
 
-
 <!-- ## Ongoing Research -->
 ## # Research
 
+### Package Managers à la Carte [[slide@NJPLS'25](_slide/NJPLS'25-pkgm/pkgm.html)]
+
+- Mmodel package managers as _distributed key-value stores_ equipped with _version logics_.
+- Introduce a proof-of-concept framework that enables the modular derivation of package managers with desired feature.
+- More to be released soon.
+
+### Semantic-Type-Guided Type Checker [[lab page](https://pl.cs.jhu.edu/projects/semantic-type-checker/)]
+
+- Kelvin Qian, Scott Smith, Brandon Stride, Shiwei Weng, Ke Wu, OOPSLA 2024 [[page](https://2024.splashcon.org/details/splash-2024-oopsla/131/Semantic-Type-Guided-Bug-Finding)] [[doi](https://dl.acm.org/doi/10.1145/3689788)] [[pdf](https://dl.acm.org/doi/pdf/10.1145/3689788)] [[repo](https://github.com/JHU-PL-Lab/jaylang)]
+- _Semantic_ typing rather than static typing.
+- Focus is on finding incorrect typings, only a single counterexample is needed.
+- Have An initial implementation to efficiently find type errors over a functional language with a rich type system
+
 ### Higher-Order Demand-Driven Symbolic Execution [[lab page](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/)]
 
-- Symbolic _backwards_ execution of functional languages
-- Start from any position in programs
-- Establish the soundness and develop a test generation algorithm. See publication [ICFP 2020].
-- (In progress) Bounded Model Checking [[repo](https://github.com/JHU-PL-Lab/ddse)]
-- Give a talk at [NJPLS 2022](https://njpls.org/oct22.html) ([[pic](https://twitter.com/LeoLambro/status/1583522021811490817)]) for progress on the BMC.
+- Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Driven Symbolic Evaluation, ICFP 2020 [[page](https://icfp20.sigplan.org/details/icfp-2020-papers/22/Higher-Order-Demand-Driven-Symbolic-Evaluation)] [[doi](https://dl.acm.org/doi/10.1145/3408984)] [[pdf](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/papers/icfp20-ddse-full.pdf)] [[repo](https://github.com/JHU-PL-Lab/odefa)] [[talk@UMD](https://talks.cs.umd.edu/talks/2657) ([slide](assets/pdf/2020-ddse-umd.pdf))] [[talk@NJPLS'22]((https://njpls.org/oct22.html))]
+- Symbolic _backwards_ execution of functional languages.
+- Start from any position in programs.
+- Establish the soundness and develop a test generation algorithm.
 
+<!-- - Bounded Model Checking [[repo](https://github.com/JHU-PL-Lab/ddse)] -->
 
-<!-- Optimization (function summarization), new features (mutable states), new approaches (model checking)  -->
-
-<!-- ### 2. Program Analysis on the Usage of JavaScript GUI Frameworks
-
-- Treat JavaScript with framework APIs e.g. ReactJS as a new OO/Functional DSL
-- Run program analysis to check the usage of framework APIs -->
-<!-- - Inspired by [flapjax](https://www.flapjax-lang.org/) -->
-
-<!-- ## Finished Projects -->
+<!-- [[NJPLS 2022](https://njpls.org/oct22.html)] -->
+<!-- - Give a talk at  ([[pic](https://twitter.com/LeoLambro/status/1583522021811490817)]) for progress on the BMC. -->
 
 ## # Work
 
-### Microsoft Research Lab, Redmond (_virtually_), Summer 2021, 
+### Microsoft Research Lab, Redmond (_virtually_), Summer 2021
 
 I worked as a Research Intern on [Checked C](https://www.microsoft.com/en-us/research/project/checked-c/) project. I designed and implemented a dataflow analysis which gathers pre/post-conditions at program points and an SMT-­based proof framework to reduce false-positive compiler warnings. It's a wonderful summer. Thanks to my mentor Sulekha Kulkarni, the boss David Tarditi and all the team members!
 
@@ -81,20 +86,11 @@ Before graduate school, I took several jobs in start-ups and freelance work, mos
 - Course Assistant, [601.426/626 Principles of Programming Languages](https://pl.cs.jhu.edu/pl/), Spring 20 / 21 / 22 / 23 / 24
 - Course Assistant, [601.329 Functional Programming in Software Engineering](https://pl.cs.jhu.edu/fpse/), Fall 20 / 21 / 22 / 23 / 24
 
-## # Publications
-
-Kelvin Qian, Scott Smith, Brandon Stride, Shiwei Weng, Ke Wu, OOPSLA 2024 [[page](https://2024.splashcon.org/details/splash-2024-oopsla/131/Semantic-Type-Guided-Bug-Finding)] [[doi](https://dl.acm.org/doi/10.1145/3689788)] [[pdf](https://dl.acm.org/doi/pdf/10.1145/3689788)] [[repo](https://github.com/JHU-PL-Lab/jaylang)]
-
-Zachary Palmer, Theodore Park, Scott Smith, Shiwei Weng, Higher-Order Demand-Driven Symbolic Evaluation, ICFP 2020 [[page](https://icfp20.sigplan.org/details/icfp-2020-papers/22/Higher-Order-Demand-Driven-Symbolic-Evaluation)] [[doi](https://dl.acm.org/doi/10.1145/3408984)] [[pdf](https://pl.cs.jhu.edu/projects/demand-driven-symbolic-execution/papers/icfp20-ddse-full.pdf)] [[repo](https://github.com/JHU-PL-Lab/odefa)] [[talk](https://talks.cs.umd.edu/talks/2657) ([slide](assets/pdf/2020-ddse-umd.pdf))]
-
 ## # Open Source
 
 Help opam repository administrating via triaging [PR](https://github.com/ocaml/opam-repository/pulls) and weekly meeting [Note](https://github.com/ocaml/opam-repository/wiki/Meeting-notes).
 
 [Maintain](https://opam.ocaml.org/packages/z3/) z3-ocaml after fixing a notorious bug lasting for years ([explanation](https://discuss.ocaml.org/t/my-fix-of-the-linking-problem-on-z3-ocaml-binding/8691) on OCaml Discuss).
-
-<!-- Make the world better via [PR](https://github.com/pulls?page=1&q=is%3Apr+author%3Aarbipher) and [Revision](https://reviews.llvm.org/p/arbipher/). -->
-<!-- - Make random RPs to OCaml and LLVM. -->
 
 <!-- - System Administrator of [our lab](https://pl.cs.jhu.edu/) -->
 

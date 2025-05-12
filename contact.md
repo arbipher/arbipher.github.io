@@ -7,7 +7,6 @@ lang: en
 
 ### Address
 
-~~WFH. I am on Zoom now.~~
 Zone 255, Ph.D. Lab, Malone Hall<br/>
 
 Department of Computer Science<br/>
@@ -18,7 +17,3 @@ Baltimore, MD 21218
 ### Email
 
 <a href="mailto:weng@cs.jhu.edu">weng@cs.jhu.edu</a>
-
-### Phone
-
-(858) 366-8367
