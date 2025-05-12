@@ -35,7 +35,7 @@ My research interests span several aspects of programming languages. I believe p
 <!-- ## Ongoing Research -->
 ## # Research
 
-### Package Managers à la Carte [[slide@NJPLS'25](_slide/NJPLS'25-pkgm/pkgm.html)]
+### Package Managers à la Carte [[slide@NJPLS'25](slide/pkgm/pkgm.html)]
 
 - Mmodel package managers as _distributed key-value stores_ equipped with _version logics_.
 - Introduce a proof-of-concept framework that enables the modular derivation of package managers with desired feature.
