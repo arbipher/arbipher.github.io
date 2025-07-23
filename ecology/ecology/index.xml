@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/ecology/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/ecology/">
+  <fr:frontmatter>
+    <fr:authors />
+    <fr:uri>https://www.prover.me/ecology/ecology/</fr:uri>
+    <fr:display-uri>ecology</fr:display-uri>
+    <fr:route>/ecology/ecology/</fr:route>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>Ok</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors />
+            <fr:uri>https://www.prover.me/ecology/index/</fr:uri>
+            <fr:display-uri>index</fr:display-uri>
+            <fr:route>/ecology/index/</fr:route>
+            <fr:title text="Hello, World!">Hello, World!</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>Programming Languages Ecology</html:p>
+            <html:ul>
+              <html:li>
+                <fr:link href="/ecology/ecology/" title="https://www.prover.me/ecology/ecology/" uri="https://www.prover.me/ecology/ecology/" display-uri="ecology" type="local">Ecology Home</fr:link>
+              </html:li>
+            </html:ul>
+            <html:p>Welcome to your first tree! This tree is the root of your forest.</html:p>
+            <html:ul><html:li><fr:link href="https://www.forester-notes.org/jms-007D/" type="external">Build and view your forest for the first time</fr:link></html:li>
+  <html:li><fr:link href="https://www.forester-notes.org/jms-007N/" type="external">Overview of the Forester markup language</fr:link></html:li>
+  <html:li><fr:link href="https://www.forester-notes.org/jms-007H/" type="external">Creating new trees</fr:link></html:li>
+  <html:li><fr:link href="https://www.forester-notes.org/jms-007K/" type="external">Creating your personal biographical tree</fr:link></html:li></html:ul>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

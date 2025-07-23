@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/ecology/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="true" base-url="/ecology/">
+  <fr:frontmatter>
+    <fr:authors />
+    <fr:uri>https://www.prover.me/ecology/index/</fr:uri>
+    <fr:display-uri>index</fr:display-uri>
+    <fr:route>/ecology/index/</fr:route>
+    <fr:title text="Home of Programming Language Ecology">Home of Programming Language Ecology</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>Programming Languages Ecology</html:p>
+    <html:ul><html:li><fr:link href="/ecology/pkgm/" title="Package Managers à la Carte" uri="https://www.prover.me/ecology/pkgm/" display-uri="pkgm" type="local">Package Managers à la Carte</fr:link></html:li>
+  <html:li><fr:link href="/ecology/resolve/" title="Resolving à la Carte" uri="https://www.prover.me/ecology/resolve/" display-uri="resolve" type="local">Resolving à la Carte</fr:link></html:li></html:ul>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors />
+            <fr:uri>https://www.prover.me/ecology/pkgm/</fr:uri>
+            <fr:display-uri>pkgm</fr:display-uri>
+            <fr:route>/ecology/pkgm/</fr:route>
+            <fr:title text="Package Managers à la Carte">Package Managers à la Carte</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>t.b.c</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors />
+            <fr:uri>https://www.prover.me/ecology/resolve/</fr:uri>
+            <fr:display-uri>resolve</fr:display-uri>
+            <fr:route>/ecology/resolve/</fr:route>
+            <fr:title text="Resolving à la Carte">Resolving à la Carte</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>t.b.c</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
