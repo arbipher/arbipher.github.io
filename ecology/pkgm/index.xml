@@ -34,17 +34,24 @@
       <fr:mainmatter>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
           <fr:frontmatter>
-            <fr:authors />
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/ecology/shiwei/" title="Shiwei Weng" uri="https://www.prover.me/ecology/shiwei/" display-uri="shiwei" type="local">Shiwei Weng</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>7</fr:month>
+              <fr:day>22</fr:day>
+            </fr:date>
             <fr:uri>https://www.prover.me/ecology/index/</fr:uri>
             <fr:display-uri>index</fr:display-uri>
             <fr:route>/ecology/index/</fr:route>
-            <fr:title text="Home of Programming Language Ecology">Home of Programming Language Ecology</fr:title>
+            <fr:title text="Shiwei's Forest">Shiwei's Forest</fr:title>
+            <fr:taxon>home</fr:taxon>
           </fr:frontmatter>
-          <fr:mainmatter>
-            <html:p>Programming Languages Ecology</html:p>
-            <html:ul><html:li><fr:link href="/ecology/pkgm/" title="Package Managers à la Carte" uri="https://www.prover.me/ecology/pkgm/" display-uri="pkgm" type="local">Package Managers à la Carte</fr:link></html:li>
-  <html:li><fr:link href="/ecology/resolve/" title="Resolving à la Carte" uri="https://www.prover.me/ecology/resolve/" display-uri="resolve" type="local">Resolving à la Carte</fr:link></html:li></html:ul>
-          </fr:mainmatter>
+          <fr:mainmatter>\hr<html:p>Forester Learning Note</html:p><html:p>It will be removed when I am familiar with it.</html:p><fr:tree show-metadata="false"><fr:frontmatter><fr:authors /><fr:date><fr:year>2025</fr:year><fr:month>7</fr:month><fr:day>23</fr:day></fr:date><fr:uri>https://www.prover.me/ecology/frst-0001/</fr:uri><fr:display-uri>frst-0001</fr:display-uri><fr:route>/ecology/frst-0001/</fr:route></fr:frontmatter><fr:mainmatter><html:p>Forester makeup language's syntax can be checked <fr:link href="https://www.forester-notes.org/007N/index.xml" type="external">007N</fr:link>.</html:p><html:p>More transclude at <fr:link href="https://www.forester-notes.org/0069/index.xml" type="external">0069</fr:link>.</html:p><html:p>Reading <fr:link href="https://git.sr.ht/~jonsterling/forester-notes.org/tree/main/item/trees" type="external">trees</fr:link> until <fr:link href="https://git.sr.ht/~jonsterling/forester-notes.org/tree/main/item/trees/006R.tree" type="external">006R</fr:link>.</html:p></fr:mainmatter></fr:tree>\hr<html:p>Programming Languages Ecology</html:p><html:ul><html:li><fr:link href="/ecology/pkgm/" title="Package Managers à la Carte" uri="https://www.prover.me/ecology/pkgm/" display-uri="pkgm" type="local">Package Managers à la Carte</fr:link></html:li>
+  <html:li><fr:link href="/ecology/resolve/" title="Resolving à la Carte" uri="https://www.prover.me/ecology/resolve/" display-uri="resolve" type="local">Resolving à la Carte</fr:link></html:li></html:ul></fr:mainmatter>
         </fr:tree>
       </fr:mainmatter>
     </fr:tree>

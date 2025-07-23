@@ -4,7 +4,7 @@
 {: .text-align-center .BlueViolet}
 **Shiwei Weng, Johns Hopkins University**
 
-You know what I mean.
+You know what I mean. **certainty**
 
 {: #book-table}
 | Intro     | Entity                         | Rules (Logic)            | Device (Computing)        |
