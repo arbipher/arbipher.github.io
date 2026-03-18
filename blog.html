@@ -39,3 +39,20 @@ redirect_from:
 </section>
 {% endif %}
 {% endfor %}
+
+<!-- for work-note -->
+<!-- <section>
+	<h2>{{ "work-note" | upcase }}</h2>
+	<p>These _work note_ are some contextless and unfinished write-ups. They are not for general reading
+		yet. I hope to enhance my write-and-publish habit so I put them here.</p>
+	<ul class='no-style'>
+		{% for post in site.categories["work-note"] %}
+		{% if post.categories contains "english" or post.lang == "en" %}
+		<li>
+			{{ post.date | date: "%Y-%m-%d" }}
+			<a href='{{ post.url }}'>{{ post.title }}</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+</section> -->

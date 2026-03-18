@@ -1,0 +1,34 @@
+flowchart TD
+    classDef entity fill:#6a9fd8,stroke:#3a6fa0,color:#fff,stroke-width:2px,font-weight:bold
+    classDef aux fill:#d8a06a,stroke:#a07a3a,color:#fff,stroke-width:2px,font-weight:bold
+
+    src(["Source code"])
+    exp(["Expression"])
+    typed_exp(["Typed expression"])
+    value(["Value"])
+    type(["Type"])
+    meta(["Meta-term"])
+    code(["Target code"])
+
+    src -->|"parse"| exp
+    exp -->|"syntactic
+type check"| typed_exp
+    exp -->|"semantic
+type check"| typed_exp
+    typed_exp -->|"type
+inference"| type
+    typed_exp -->|"interpret
+(big-step)"| value
+    typed_exp -->|"interpret
+(small-step)"| typed_exp
+    exp -->|"interpret
+(untyped)"| value
+    value -->|"REPL
+(loop back)"| exp
+    meta -->|"meta-eval"| src
+    typed_exp -->|"compile"| code
+    code -->|"decompile
+/ unparse"| exp
+
+    class src,exp,typed_exp,value entity
+    class type,meta,code aux
